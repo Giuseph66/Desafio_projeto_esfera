@@ -80,8 +80,8 @@ Desafio_projeto_esfera/
 ├── back/                  # API Node.js
 │   ├── src/
 │   ├── sql/
+│   ├── docker-compose.yml     # Configuração do banco
 │   └── package.json
-├── docker-compose.yml     # Configuração do banco
 └── README.md
 ```
 
@@ -125,7 +125,7 @@ Se preferir usar PostgreSQL instalado localmente:
    brew install postgresql
    
    # Windows
-   # Baixar do site oficial: https://www.postgresql.org/download/windows/
+   Baixar do site oficial: https://www.postgresql.org/download/windows/
    ```
 
 2. **Criar banco de dados:**
@@ -202,7 +202,11 @@ flutter doctor
 #### Opção A: Docker (Recomendado)
 
 ```bash
-# No diretório raiz do projeto
+
+# Navega ate a pasta correta
+cd back
+
+# Inicializ o banco 
 docker-compose up -d
 
 # Verificar logs do banco (opcional)
@@ -220,7 +224,7 @@ sudo systemctl start postgresql
 brew services start postgresql
 
 # Windows
-# Iniciar via Services ou pgAdmin
+Iniciar via Services ou pgAdmin
 ```
 
 ### 2. Iniciar o Backend
@@ -283,12 +287,13 @@ back/
 │   └── server.js          # Servidor principal
 ├── sql/                   # Scripts SQL
 │   └── 001_init.sql       # Inicialização do banco
+├── docker-compose.yml     # Configuração do banco
 └── package.json           # Dependências Node.js
 ```
 
 ## 🔌 API Endpoints
 
-### Health Check
+### Verificar status
 ```bash
 curl http://localhost:3001/
 ```
@@ -554,12 +559,6 @@ cd ../front && flutter pub get && flutter run -d web-server --web-port 3000
 - ✅ Listagem com paginação
 - ✅ Busca por nome/CNPJ
 - ✅ Interface responsiva
-
-### PWA (Progressive Web App)
-- ✅ Instalável no dispositivo
-- ✅ Funciona offline (cache)
-- ✅ Ícone personalizado
-- ✅ Manifest configurado
 
 
 ## 👥 Autores
