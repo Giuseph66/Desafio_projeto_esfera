@@ -1,0 +1,35 @@
+{
+    "name": "Desafio Esfera Solar",
+    "short_name": "Esfera Solar",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#2240FE",
+    "theme_color": "#2240FE",
+    "description": "Sistema de consulta e gerenciamento de CNPJ com integração à API OpenCNPJ.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

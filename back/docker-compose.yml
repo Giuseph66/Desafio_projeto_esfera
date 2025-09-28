@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: esfera-postgres
+    environment:
+      POSTGRES_DB: esfera
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d esfera"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - esfera-network
+
+volumes:
+  postgres_data:
+
+networks:
+  esfera-network:
+    driver: bridge

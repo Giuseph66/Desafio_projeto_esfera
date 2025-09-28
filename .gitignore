@@ -1,0 +1,171 @@
+# ===========================================
+# PROJETO ESFERA SOLAR - GITIGNORE UNIFICADO
+# ===========================================
+
+# ===========================================
+# DEPENDÊNCIAS E PACKAGES
+# ===========================================
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+jspm_packages/
+
+# Flutter/Dart/Pub dependencies
+.pub-cache/
+.pub/
+.dart_tool/
+.flutter-plugins-dependencies
+
+# ===========================================
+# VARIÁVEIS DE AMBIENTE
+# ===========================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.test
+
+# ===========================================
+# LOGS E ARQUIVOS TEMPORÁRIOS
+# ===========================================
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Temporary folders
+tmp/
+temp/
+migrate_working_dir/
+
+# ===========================================
+# BUILD E COMPILAÇÃO
+# ===========================================
+
+# Flutter build artifacts
+build/
+**/build/
+**/ios/Flutter/.last_build_id
+**/doc/api/
+
+# Android Studio build artifacts
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Node.js build outputs
+dist/
+.next/
+.nuxt/
+public/
+
+# ===========================================
+# COBERTURA DE TESTES
+# ===========================================
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output
+
+# ===========================================
+# CACHE E ARQUIVOS DE SISTEMA
+# ===========================================
+
+# Cache directories
+.cache/
+.parcel-cache/
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.eslintcache
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===========================================
+# EDITORES E IDEs
+# ===========================================
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code (comentado por padrão - descomente se necessário)
+#.vscode/
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+
+# ===========================================
+# ARQUIVOS DE DESENVOLVIMENTO
+# ===========================================
+
+# Miscellaneous
+*.class
+*.pyc
+.svn/
+.swiftpm/
+.history
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# ===========================================
+# PACKAGE MANAGERS
+# ===========================================
+
+# npm
+.npm/
+*.tgz
+.yarn-integrity
+
+# Node REPL history
+.node_repl_history
+
+# ===========================================
+# FRAMEWORKS ESPECÍFICOS
+# ===========================================
+
+# Storybook
+.out/
+.storybook-out/
+
+# ===========================================
+# DOCKER
+# ===========================================
+
+# Docker
+.dockerignore
+
+# ===========================================
+# ARQUIVOS DE CONFIGURAÇÃO LOCAL
+# ===========================================
+
+# Arquivos de configuração local que não devem ser versionados
+config/local.js
+config/local.json
