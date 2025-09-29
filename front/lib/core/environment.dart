@@ -4,7 +4,6 @@
 /// permitindo fácil alteração entre ambientes de desenvolvimento e produção
 class Env {
   /// URL base do backend configurável via --dart-define
-  /// Fallback para localhost:3001 em desenvolvimento
   static const String backendBase = String.fromEnvironment(
     'BACKEND_URL',
     defaultValue: 'http://localhost:3001',

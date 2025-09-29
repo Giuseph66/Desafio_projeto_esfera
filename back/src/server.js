@@ -48,7 +48,7 @@ app.get('/', async (req, res) => {
     
     res.json({
       ok: true,
-      name: 'Esfera Solar API',
+      name: 'Desafio Esfera Solar API',
       timestamp: new Date().toISOString(),
       database: bancoConectado ? 'connected' : 'disconnected',
       version: process.env.npm_package_version || '1.0.0',
@@ -57,7 +57,7 @@ app.get('/', async (req, res) => {
     logger.error('Health check failed:', error);
     res.status(503).json({
       ok: false,
-      name: 'Esfera Solar API',
+      name: 'Desafio Esfera Solar API',
       timestamp: new Date().toISOString(),
       database: 'disconnected',
     });

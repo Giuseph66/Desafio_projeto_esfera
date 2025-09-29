@@ -57,10 +57,8 @@ router.post('/', async (req, res) => {
       throw new NotFoundError('CNPJ não encontrado');
     }
 
-    // Mapeia dados para formato do banco
     const dadosEmpresa = mapearOpenCnpjParaLinhaEmpresa(dadosApi);
 
-    // Query de upsert (INSERT ... ON CONFLICT ... DO UPDATE)
     const upsertQuery = `
       INSERT INTO companies (
         cnpj, razao_social, nome_fantasia, situacao_cadastral, data_situacao_cadastral,
@@ -168,7 +166,6 @@ router.get('/', async (req, res) => {
   const client = await pool.connect();
   
   try {
-    // Validar query parameters
     const dadosValidados = schemaListarEmpresas.parse(req.query);
     const { search = '', page = 1, pageSize = 20 } = dadosValidados;
 
@@ -183,7 +180,6 @@ router.get('/', async (req, res) => {
     let contadorParametros = 0;
 
     if (search) {
-      // Busca por CNPJ (dígitos) ou razão social (ILIKE)
       const digitosBusca = search.replace(/\D/g, '');
       const padraoBusca = `%${search}%`;
       
@@ -198,12 +194,10 @@ router.get('/', async (req, res) => {
       }
     }
 
-    // Query para contar total de registros
     const queryContagem = `SELECT COUNT(*) as total FROM companies ${clausulaWhere}`;
     const resultadoContagem = await client.query(queryContagem, parametrosQuery);
     const total = parseInt(resultadoContagem.rows[0].total);
 
-    // Query para buscar dados paginados
     const queryDados = `
       SELECT 
         id, cnpj, razao_social, nome_fantasia, situacao_cadastral,

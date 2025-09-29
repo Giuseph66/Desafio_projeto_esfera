@@ -318,13 +318,13 @@ curl -X POST http://localhost:3001/companies \
 curl http://localhost:3001/companies
 
 # Listar com paginação
-curl "http://localhost:3001/companies?page=1&limit=5"
+curl "http://localhost:3001/companies?page=1&pageSize=5"
 
 # Buscar empresas por termo
 curl "http://localhost:3001/companies?search=esfera"
 
 # Buscar com paginação e filtro
-curl "http://localhost:3001/companies?page=2&limit=10&search=solar"
+curl "http://localhost:3001/companies?page=2&pageSize=10&search=solar"
 ```
 
 ### Exemplos de Resposta
@@ -358,7 +358,7 @@ curl "http://localhost:3001/companies?page=2&limit=10&search=solar"
   ],
   "pagination": {
     "page": 1,
-    "limit": 10,
+    "pageSize": 10,
     "total": 1,
     "totalPages": 1
   }
